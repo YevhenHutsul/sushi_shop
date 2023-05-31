@@ -4,12 +4,12 @@ import React from "react";
 import { HeaderCardButton } from "./HeaderButton/HeaderCardButton";
 
 
-export const Header = (props) => {
+export const Header = ({setVisibleCart}) => {
     return (
     <React.Fragment>
         <header className={styles.header}>
             <h1>Япона кухня</h1>
-            <HeaderCardButton/>
+            <HeaderCardButton setVisibleCart = {setVisibleCart}/>
         </header>
         <div className={styles['main-image']}>
             <img src={sushiImg} alt={'Наши суши'}/>

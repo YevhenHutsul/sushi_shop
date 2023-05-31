@@ -5,7 +5,17 @@ import { MealItem } from "./MealsItem/MealItem";
 
 export const MealsList = () => {
 
-    const mealList = DUMMY_MEALS.map(meal => <li> <MealItem name = {meal.name} description = {meal.description} price = {meal.price}key={meal.id}/></li>);
+    const mealList = DUMMY_MEALS
+    .map(meal => 
+    <li> 
+        <MealItem 
+        name = {meal.name} 
+        description = {meal.description} 
+        price = {meal.price}
+        key={meal.id}
+        id = {meal.id}
+        />
+        </li>);
 
 
     return (
