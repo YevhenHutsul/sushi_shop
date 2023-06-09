@@ -7,7 +7,7 @@ import { CartItem } from './cartItem';
 
 export const Cart = ({ setVisibleCartFalse }) => {
     const cartContext = useContext(CartContext);
-    const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
+    const totalAmount = `$${Math.abs(cartContext.totalAmount).toFixed(2)}`;
     const hasItems = cartContext.items.length > 0;
     const removeCardHandler = (id) => {
         cartContext.removeItem(id);
@@ -24,7 +24,7 @@ export const Cart = ({ setVisibleCartFalse }) => {
                 amount={item.amount}
                 price={item.price}
                 onAdd={addCartItemHandler.bind(null, item)}
-                onRemove={removeCardHandler.bind(null, item)}
+                onRemove={removeCardHandler.bind(null, item.id)}
             />
         })}
     </ul>
