@@ -3,7 +3,7 @@ import { MealItemForm } from './MealItemForm';
 import styles from './meal.module.css'
 import { CartContext } from '../../../Store/CartContex';
 
-export const MealItem = ({ name, description, price, id }) => {
+export const MealItem = ({ name, description, price, id}) => {
     const formattedPrice = `$${price.toFixed(2)}`;
     const cartContext = useContext(CartContext);
 
@@ -16,7 +16,7 @@ export const MealItem = ({ name, description, price, id }) => {
         })
     }
     return (
-        <li className={styles.meal}>
+        <li className={styles.meal} key={id}>
             <div>
                 <h3>{name}</h3>
                 <div className={styles.description}>{description}</div>

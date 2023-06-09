@@ -7,12 +7,11 @@ export const MealsList = () => {
 
     const mealList = DUMMY_MEALS
     .map(meal => 
-    <li> 
+    <li key={meal.id}> 
         <MealItem 
         name = {meal.name} 
         description = {meal.description} 
         price = {meal.price}
-        key={meal.id}
         id = {meal.id}
         />
         </li>);
